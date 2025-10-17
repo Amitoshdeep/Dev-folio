@@ -80,7 +80,7 @@ function About() {
       exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 1.8 }}
     >
-      <div className='w-full max-w-7xl flex flex-col bg-black/90 p-6 pb-16 rounded-lg text-stone-400 gap-10'>
+      <div className='w-full max-w-7xl flex flex-col bg-black/95 p-6 pb-16 rounded-lg text-stone-400 gap-10'>
 
         {/* Heading */}
         <Heading title="ABOUT" subHead="More about me" />
