@@ -10,6 +10,7 @@ import Contact from './pages/Contact'
 // Importing components
 import ClickSpark from './reactBitz/ClickSpark'
 import Navbar from './components/Navbar'
+import ScrollToTop from './components/ScrollToTop'
 
 // For Color Toggle
 const colors = ['#f87171', '#fb923c', '#f472b6', '#34d399', '#60a5fa']
@@ -43,9 +44,9 @@ function App() {
         sparkCount={8}
         duration={400}
       >
-        {/* Your content here */}
 
         <Navbar/>
+        <ScrollToTop />
 
         <Routes>
 
@@ -59,14 +60,14 @@ function App() {
 
 
         <div className='
-        absolute bottom-4 right-4
-        flex gap-3 cursor-pointer
-        justify-center items-center
-        bg-black/30 backdrop-blur-md
-        px-3 py-2 rounded-4xl
-        '
+          fixed bottom-4 right-7
+          flex gap-3 cursor-pointer
+          justify-center items-center
+          bg-black/50 backdrop-blur-md
+          px-3 py-2 rounded-4xl
+          '
 
-        onClick={nextColor}
+          onClick={nextColor}
         >
           {/* Circle For Color */}
           <div className='w-5 aspect-square rounded-full border-2 border-gray-500/30 accent-bg'>
