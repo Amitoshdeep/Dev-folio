@@ -10,7 +10,6 @@ import Contact from './pages/Contact'
 // Importing components
 import ClickSpark from './reactBitz/ClickSpark'
 import Navbar from './components/Navbar'
-import ScrollToTop from './components/ScrollToTop'
 import NotFound from './pages/NotFound'
 
 // For Color Toggle
@@ -47,7 +46,6 @@ function App() {
       >
 
         <Navbar/>
-        <ScrollToTop />
 
         <Routes>
 
