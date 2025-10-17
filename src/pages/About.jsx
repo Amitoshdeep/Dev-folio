@@ -16,8 +16,8 @@ function About() {
       <div className='h-full bg-black/50 w-5/6 flex flex-col p-4'>
         {/* Your content here */}
 
-        <div className=''>
-          <Heading title="ABOUT"/>
+        <div className='h-max'>
+          <Heading title="ABOUT" subHead="More about me"/>
         </div>
 
 

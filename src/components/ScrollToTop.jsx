@@ -6,8 +6,14 @@ export default function ScrollToTop() {
   const { pathname } = useLocation();
 
   useEffect(() => {
-    // Ensure scroll happens after a tiny delay to allow page to render
-    window.scrollTo(0, 0);
+    // scroll after a small delay to ensure the page element exists
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "smooth", // optional smooth scroll
+      });
+    }, 10);
   }, [pathname]);
 
   return null;
