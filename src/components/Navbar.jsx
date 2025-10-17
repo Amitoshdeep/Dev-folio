@@ -1,5 +1,5 @@
 import React ,{useState, useEffect } from 'react'
-import { Link , useLocation } from 'react-router-dom'
+import { NavLink , useLocation } from 'react-router-dom'
 
 // Importing Icons
 import { FaGithub, FaLinkedin, FaYoutube } from "react-icons/fa";
@@ -54,21 +54,16 @@ function Navbar() {
       {/* TextType */}
       <div className={`text-stone-400 gap-2 text-2xl ${navActive ? "flex" : "hidden"}`}>
         <p>a </p>
-        <div className='relative overflow-hidden'>
+        <div className='relative overflow-hidden italic'>
           <TextType
             text={[
               "Web Developer",
               "Frontend Enthusiast",
-              "React Developer",
               "Tech Geek",
               "Problem Solver",
-              "UI/UX Lover",
               "Full Stack Aspirant",
-              "Open Source Contributor",
               "Lifelong Learner",
               "Student!",
-              "Code Ninja",
-              "Creative Thinker"
             ]}
             typingSpeed={75}
             pauseDuration={1500}
@@ -83,23 +78,46 @@ function Navbar() {
       </div>
 
       {/* Navigation */}
-      <ul className='flex gap-4 text-lg'>
-        <Link to={"/"}>
+      <ul className='flex gap-4 text-lg h-7'>
+        <NavLink
+          to="/"
+          className={({ isActive }) =>
+            `navbar ${isActive ? "active" : ""}`
+          }
+        >
           Home
-        </Link>
+          <div className='underNav'></div>
+        </NavLink>
 
-        <Link to={"/About"}>
+        <NavLink
+          to="/About"
+          className={({ isActive }) =>
+            `navbar ${isActive ? "active" : ""}`
+          }
+        >
           About
-        </Link>
+          <div className='underNav'></div>
+        </NavLink>
 
-        <Link to={"/Resume"}>
+        <NavLink
+          to="/Resume"
+          className={({ isActive }) =>
+            `navbar ${isActive ? "active" : ""}`
+          }
+        >
           Resume
-        </Link>
+          <div className='underNav'></div>
+        </NavLink>
 
-        <Link to={"/Contact"}>
+        <NavLink
+          to="/Contact"
+          className={({ isActive }) =>
+            `navbar ${isActive ? "active" : ""}`
+          }
+        >
           Contact
-        </Link>
-
+          <div className='underNav'></div>
+        </NavLink>
       </ul>
 
       {/* here CUM's my Links ;) */}

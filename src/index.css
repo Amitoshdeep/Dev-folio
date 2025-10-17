@@ -24,3 +24,18 @@
   /* color: white; */
 }
 
+.navbar{
+  @apply duration-500 hover:text-[var(--accent-color)] relative overflow-hidden;
+}
+
+.underNav{
+  @apply absolute h-[2px] bg-[var(--accent-color)] w-2/5 bottom-0 duration-300 -left-1/2;
+}
+
+.navbar:hover .underNav , .navbar.active .underNav{
+  @apply left-0;
+}
+
+.navbar.active{
+  @apply text-[var(--accent-color)];
+}
