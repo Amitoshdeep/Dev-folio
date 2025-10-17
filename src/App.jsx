@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import ClickSpark from './reactBitz/ClickSpark'
 import Navbar from './components/Navbar'
 import ScrollToTop from './components/ScrollToTop'
+import NotFound from './pages/NotFound'
 
 // For Color Toggle
 const colors = ['#f87171', '#fb923c', '#f472b6', '#34d399', '#60a5fa']
@@ -54,7 +55,7 @@ function App() {
           <Route path='/About' element={<About/> } />
           <Route path='/Resume' element={<Resume/> } />
           <Route path='/Contact' element={<Contact/> } />
-
+          <Route path='*' element={<NotFound/>} />
 
         </Routes>
 
