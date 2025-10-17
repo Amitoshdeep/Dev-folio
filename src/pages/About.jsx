@@ -4,9 +4,13 @@ import { motion } from 'framer-motion';
 // Importing Components
 import Heading from '../components/Heading';
 
+// Importing Icons
+import { IoIosArrowForward } from "react-icons/io";
+
 function About() {
   const [age, setAge] = useState({});
 
+  // DOB Calc
   useEffect(()=>{
     const birthDate = new Date("2006-08-18T00:00:00"); // Replace with your DOB
 
@@ -30,6 +34,14 @@ function About() {
     return () => clearInterval(interval);
 
   },[]);
+
+  const ulData =[
+    {title: "Age",data: age.nineDecimal },
+    {title: "Degree",data: "BCA Undergrad" },
+    {title: "Website",data: "You're already here!"},
+    {title: "Email", data: "amitosh.dev@outlook.com"}
+  ];
+
 
   return (
     <motion.div
@@ -68,8 +80,20 @@ function About() {
             <p>Currently, I’m actively learning <span class="accent">full-stack development</span>, <span class="accent">cloud computing</span>, and <span class="accent">DevOps</span> practices. While I’m still early in my journey, I’m driven by a strong curiosity and love experimenting with new tools and technologies.</p>
             <p>My goal is to build secure, scalable, and user-friendly applications that make an impact. Always learning, always building. 💻🚀</p>
 
-          </div>
+            {/* Ul List */}
+            <ul className='flex w-full flex-wrap'>
+              {
+                ulData.map( (list , index ) => (
+                  <li className='flex gap-2 w-1/2 items-center'>
+                    <IoIosArrowForward className='accent'/>
+                    <span className='font-bold'>
+                      {list.title}</span>: {list.data} { list.title === 'Age' ? `years`: ``}
+                  </li>
+                ) )
+              }
+            </ul>
 
+          </div>
 
         </div>
 

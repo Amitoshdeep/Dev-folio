@@ -13,10 +13,12 @@
 /* Example usage */
 .accent {
   color: var(--accent-color);
+  transition: all 600ms;
 }
 
 .accent-bg {
   background-color: var(--accent-color);
+  transition: all 600ms;
   /* color: white; */
 }
 
