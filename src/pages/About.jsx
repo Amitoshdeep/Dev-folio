@@ -3,15 +3,38 @@ import { motion } from 'framer-motion';
 
 // Importing Components
 import Heading from '../components/Heading';
+import InfiniteScroll from '../reactBitz/InfiniteScroll';
 
 // Importing Icons
 import { IoIosArrowForward } from "react-icons/io";
+import { FaHtml5 ,FaCss3, FaReact ,FaNode , FaGithub} from "react-icons/fa";
+import { IoLogoJavascript } from "react-icons/io5";
+import { RiNextjsFill , RiTailwindCssFill} from "react-icons/ri";
+import { SiTypescript , SiExpress } from "react-icons/si";
+import { DiMongodb } from "react-icons/di";
+
+const items = [
+  { content: <><FaHtml5 className='accent'/> HTML5</> },
+  { content: <><FaCss3 className='accent'/> CSS3</>  },
+  { content: <><IoLogoJavascript className='accent'/> JavaScript (ES6+)</> },
+  { content: <><FaReact className='accent'/> React.js</> },
+  { content: <><RiNextjsFill className='accent'/> Next.js</> },
+  { content: <><SiTypescript className='accent'/> TypeScript</> },
+  { content: <><RiTailwindCssFill/> Tailwind CSS</> },
+  { content: <><FaNode/> Node.js</> },
+  { content: <><SiExpress /> Express.js</> },
+  { content: <><DiMongodb /> MongoDB </> },
+  { content: <><FaGithub/> Git & GitHub</> },
+  { content: "Responsive Design" },
+  { content: "RESTful APIs" },
+  { content: "Problem Solving / Algorithms" },
+];
 
 function About() {
   const [age, setAge] = useState({});
 
   // DOB Calc
-  useEffect(()=>{
+  useEffect(() => {
     const birthDate = new Date("2006-08-18T00:00:00"); // Replace with your DOB
 
     function updateAge() {
@@ -19,83 +42,92 @@ function About() {
       const ageInMs = now - birthDate;
       const ageInYears = ageInMs / (1000 * 60 * 60 * 24 * 365.25);
 
-      const ageIn1 = ageInYears.toFixed(1);
-      const ageIn9 = ageInYears.toFixed(9);
-
       setAge({
-        oneDecimal: ageIn1,
-        nineDecimal: ageIn9
-      })
-
+        oneDecimal: ageInYears.toFixed(1),
+        nineDecimal: ageInYears.toFixed(9),
+      });
     }
 
     updateAge(); // Initial call
     const interval = setInterval(updateAge, 100);
     return () => clearInterval(interval);
+  }, []);
 
-  },[]);
-
-  const ulData =[
-    {title: "Age",data: age.nineDecimal },
-    {title: "Degree",data: "BCA Undergrad" },
-    {title: "Website",data: "You're already here!"},
-    {title: "Email", data: "amitosh.dev@outlook.com"}
+  const ulData = [
+    { title: "Age", data: age.nineDecimal },
+    { title: "Degree", data: "BCA Undergrad" },
+    { title: "Website", data: "You're already here!" },
+    { title: "Email", data: "amitosh.dev@outlook.com" },
   ];
-
 
   return (
     <motion.div
-      className='h-full w-full flex justify-center items-center p-4'
-      initial={{ opacity: 0, y: 100 }}   // Start slightly below
-      animate={{ opacity: 1, y: 0 }}    // Animate to original position
-      exit={{ opacity: 0, y: 50 }}      // Fade out while moving down
+      className='h-screen w-full flex justify-center items-start p-4'
+      initial={{ opacity: 0, y: 100 }}
+      animate={{ opacity: 1, y: 0 }}
+      exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 1.8 }}
     >
-      <div className='h-full bg-black/50 w-5/6 flex flex-col p-4 rounded-lg text-stone-400'>
-        {/* Your content here */}
-
+      <div className='min-h-full bg-black/90 w-5/6 flex flex-col p-6 rounded-lg text-stone-400 gap-8'>
         {/* Heading */}
-        <div className='h-max'>
-          <Heading title="ABOUT" subHead="More about me"/>
-        </div>
+        <Heading title="ABOUT" subHead="More about me" />
 
-        {/* About me */}
-        <div className='min-h-1/2 w-full flex'>
-
-          {/* img div */}
-          <div className=' w-2/6 flex justify-center items-center grayscale-100'>
-            <img src="/imgs/me.png" alt="Me" className='object-cover h-2/3' />
+        {/* About me section */}
+        <div className='flex flex-col md:flex-row gap-6'>
+          {/* Image */}
+          <div className='w-full md:w-2/6 flex justify-center items-center grayscale'>
+            <img src="/imgs/me.png" alt="Me" className='object-cover h-64 md:h-2/3 rounded-lg' />
           </div>
 
           {/* Information */}
-          <div className='flex w-2/3 text-lg flex-col gap-6'>
-            {/* Fake Job title LOL */}
+          <div className='flex flex-col w-full md:w-4/6 gap-4 text-lg'>
             <h2 className='text-3xl font-bold accent'>
               Full Stack Developer in Making
             </h2>
 
             <p>I Write, Test, Commit... and debug (more than I'd like to admit 😂)</p>
 
-            <p>I’m <span class="accent">Amitoshdeep Singh</span>, an <span>{age.oneDecimal}</span>-year-old <span class="accent">BCA</span> student with a growing passion for technology and software development. My journey started with a fascination for how apps and systems work, and now I'm diving deeper into coding, problem-solving, and exploring real-world tech.</p>
-            <p>Currently, I’m actively learning <span class="accent">full-stack development</span>, <span class="accent">cloud computing</span>, and <span class="accent">DevOps</span> practices. While I’m still early in my journey, I’m driven by a strong curiosity and love experimenting with new tools and technologies.</p>
-            <p>My goal is to build secure, scalable, and user-friendly applications that make an impact. Always learning, always building. 💻🚀</p>
+            <p>
+              I’m <span className="accent">Amitoshdeep Singh</span>, an <span>{age.oneDecimal}</span>-year-old <span className="accent">BCA</span> student with a growing passion for technology and software development. My journey started with a fascination for how apps and systems work, and now I'm diving deeper into coding, problem-solving, and exploring real-world tech.
+            </p>
 
-            {/* Ul List */}
-            <ul className='flex w-full flex-wrap'>
-              {
-                ulData.map( (list , index ) => (
-                  <li className='flex gap-2 w-1/2 items-center'>
-                    <IoIosArrowForward className='accent'/>
-                    <span className='font-bold'>
-                      {list.title}</span>: {list.data} { list.title === 'Age' ? `years`: ``}
-                  </li>
-                ) )
-              }
+            <p>
+              Currently, I’m actively learning <span className="accent">full-stack development</span>, <span className="accent">cloud computing</span>, and <span className="accent">DevOps</span> practices. While I’m still early in my journey, I’m driven by a strong curiosity and love experimenting with new tools and technologies.
+            </p>
+
+            <p>
+              My goal is to build secure, scalable, and user-friendly applications that make an impact. Always learning, always building. 💻🚀
+            </p>
+
+            {/* Info List */}
+            <ul className='flex flex-wrap gap-2'>
+              {ulData.map((list, index) => (
+                <li key={index} className='flex gap-2 w-1/2 items-center'>
+                  <IoIosArrowForward className='accent' />
+                  <span className='font-bold'>{list.title}</span>: {list.data} {list.title === 'Age' ? `years` : ``}
+                </li>
+              ))}
             </ul>
-
           </div>
-
         </div>
+
+        {/* Skills / Infinite Scroll */}
+        <div className='flex flex-col flex-1 gap-4 overflow-auto'>
+          <Heading title="Skills" />
+          <div className='h-64 md:h-80 w-full'>
+            <InfiniteScroll
+              items={items}
+              isTilted={true}
+              tiltDirection='left'
+              autoplay={true}
+              autoplaySpeed={0.7}
+              autoplayDirection="down"
+              pauseOnHover={true}
+            />
+          </div>
+        </div>
+
+        {/* Tech Interests */}
 
 
       </div>
