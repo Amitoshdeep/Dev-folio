@@ -17,7 +17,7 @@ function Resume() {
         {/* Your content here */}
 
         <div className=''>
-          <Heading title="RESUME"/>
+          <Heading title="RESUME" subHead="CHECK MY RESUME"/>
         </div>
 
 

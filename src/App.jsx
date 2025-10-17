@@ -34,7 +34,7 @@ function App() {
     className='h-screen w-screen
     bg-[url(/imgs/bgMe.webp)] bg-right-top
     overflow-x-hidden
-    text-xl font-lato
+    text-xl font-poppins
     relative cursor-default
     '>
     <ClickSpark

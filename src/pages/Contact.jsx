@@ -16,7 +16,7 @@ function Contact() {
         {/* Your content here */}
 
         <div className=''>
-          <Heading title="CONTACT"/>
+          <Heading title="CONTACT" subHead="CONTACT ME"/>
         </div>
 
       </div>

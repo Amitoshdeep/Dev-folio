@@ -1,11 +1,7 @@
 @import "tailwindcss";
 
 @theme{
-
-  --font-merriWeather : "Merriweather", serif;
-  --font-openSans :"Open Sans", sans-serif;
-  --font-playFair :"Playfair", serif;
-  --font-lato : "Lato", sans-serif;
+  --font-poppins : "Poppins", sans-serif;
 }
 
 /* FOR COLOR SCHEMES :3 */

@@ -41,7 +41,7 @@ function Navbar() {
         </p>
 
         {/* Name */}
-        <p className={`flex gap-3 text-4xl font-playFair`}>
+        <p className={`flex gap-3 text-4xl`}>
           <span className={`${navActive ? "block" : "hidden"}`}>I'm </span>
           <span className='text-stone-400'><strong>Amitoshdeep Singh</strong></span>
         </p>
@@ -49,7 +49,7 @@ function Navbar() {
         {/* TextType */}
         <div className={`text-stone-400 gap-2 text-2xl ${navActive ? "flex" : "hidden"}`}>
           <p>a </p>
-          <div className='relative overflow-hidden italic'>
+          <div className='relative overflow-hidden'>
             <TextType
               text={[
                 "Web Developer",
