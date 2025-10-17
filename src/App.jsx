@@ -1,7 +1,7 @@
 import React , {useState, useEffect} from 'react'
 import { Routes, Route} from 'react-router-dom'
 
-// Importing pages
+// Importing pages test
 import Home from './pages/Home'
 import About from './pages/About'
 import Resume from './pages/Resume'
@@ -34,7 +34,8 @@ function App() {
     bg-[url(/imgs/bgMe.webp)] bg-right-top
     overflow-x-hidden
     text-xl font-lato
-    relative'>
+    relative cursor-default
+    '>
     <ClickSpark
         sparkColor={colors[colorIndex]}
         sparkSize={12}
