@@ -8,10 +8,10 @@ import LogoLoop from '../reactBitz/LogoLoop';
 
 // Importing Icons
 import { IoIosArrowForward } from "react-icons/io";
-import { FaHtml5 ,FaCss3, FaReact ,FaNode , FaGithub} from "react-icons/fa";
+import { FaHtml5, FaCss3, FaReact, FaNode, FaGithub } from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
-import { RiNextjsFill , RiTailwindCssFill} from "react-icons/ri";
-import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss , SiExpress } from 'react-icons/si';
+import { RiNextjsFill, RiTailwindCssFill } from "react-icons/ri";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss, SiExpress } from 'react-icons/si';
 import { DiMongodb } from "react-icons/di";
 
 const items = [
@@ -39,7 +39,7 @@ const techLogos = [
   { node: <FaNode />, title: "Node js", href: "https://nodejs.org/en" },
   { node: <FaReact />, title: "React", href: "https://react.dev/" },
   { node: <FaGithub />, title: "Github", href: "https://github.com/" },
-  { node: <DiMongodb />, title: "Github", href: "https://www.mongodb.com/" },
+  { node: <DiMongodb />, title: "MongoDB", href: "https://www.mongodb.com/" },
 ];
 
 function About() {
@@ -74,13 +74,14 @@ function About() {
 
   return (
     <motion.div
-      className='h-screen w-full flex justify-center items-start p-4'
+      className='min-h-screen w-full flex justify-center items-start p-4 pb-10'
       initial={{ opacity: 0, y: 100 }}
       animate={{ opacity: 1, y: 0 }}
       exit={{ opacity: 0, y: 50 }}
       transition={{ duration: 1.8 }}
     >
-      <div className='min-h-full bg-black/90 w-5/6 flex flex-col p-6 rounded-lg text-stone-400 gap-8'>
+      <div className='w-full max-w-7xl flex flex-col bg-black/90 p-6 pb-16 rounded-lg text-stone-400 gap-10'>
+
         {/* Heading */}
         <Heading title="ABOUT" subHead="More about me" />
 
@@ -124,7 +125,7 @@ function About() {
         </div>
 
         {/* Skills / Infinite Scroll */}
-        <div className='flex flex-col flex-1 gap-4 overflow-auto py-10'>
+        <div className='flex flex-col gap-4 overflow-auto'>
           <Heading title="Skills"/>
           <div className='h-64 md:h-80 w-full'>
             <InfiniteScroll
@@ -139,10 +140,10 @@ function About() {
           </div>
         </div>
 
-        {/* Tech Interests */}
-        <div className='py-10 flex flex-col gap-10'>
+        {/* Tech Interests / Logo Loop */}
+        <div className='flex flex-col gap-10'>
           <Heading title="Tech Interests"/>
-          <div className='h-1/2 relative overflow-hidden'>
+          <div className='h-24 relative overflow-hidden'>
             <LogoLoop
               logos={techLogos}
               speed={100}
@@ -154,9 +155,9 @@ function About() {
               fadeOut
               fadeOutColor="#000000"
               ariaLabel="Technology partners"
-              />
+            />
           </div>
-          <div className='h-1/2 relative overflow-hidden'>
+          <div className='h-24 relative overflow-hidden'>
             <LogoLoop
               logos={techLogos}
               speed={100}
@@ -168,11 +169,9 @@ function About() {
               fadeOut
               fadeOutColor="#000000"
               ariaLabel="Technology partners"
-              />
+            />
           </div>
-
         </div>
-
 
       </div>
     </motion.div>

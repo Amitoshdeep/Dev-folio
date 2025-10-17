@@ -6,13 +6,13 @@ import Heading from '../components/Heading';
 function Contact() {
   return (
     <motion.div
-      className='h-full w-full flex justify-center items-center p-4'
+      className='min-h-screen w-full flex justify-center items-start p-4 pb-10'
       initial={{ opacity: 0, y: 100 }}   // Start slightly below
       animate={{ opacity: 1, y: 0 }}    // Animate to original position
       exit={{ opacity: 0, y: 50 }}      // Fade out while moving down
       transition={{ duration: 1.8 }}
     >
-      <div className='h-full bg-black/50 w-5/6 rounded-lg'>
+      <div className='w-full max-w-7xl flex flex-col bg-black/90 p-6 pb-16 rounded-lg text-stone-400 gap-10'>
         {/* Your content here */}
 
         <div className=''>
