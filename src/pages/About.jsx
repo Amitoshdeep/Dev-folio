@@ -4,13 +4,14 @@ import { motion } from 'framer-motion';
 // Importing Components
 import Heading from '../components/Heading';
 import InfiniteScroll from '../reactBitz/InfiniteScroll';
+import LogoLoop from '../reactBitz/LogoLoop';
 
 // Importing Icons
 import { IoIosArrowForward } from "react-icons/io";
 import { FaHtml5 ,FaCss3, FaReact ,FaNode , FaGithub} from "react-icons/fa";
 import { IoLogoJavascript } from "react-icons/io5";
 import { RiNextjsFill , RiTailwindCssFill} from "react-icons/ri";
-import { SiTypescript , SiExpress } from "react-icons/si";
+import { SiReact, SiNextdotjs, SiTypescript, SiTailwindcss , SiExpress } from 'react-icons/si';
 import { DiMongodb } from "react-icons/di";
 
 const items = [
@@ -20,14 +21,25 @@ const items = [
   { content: <><FaReact className='accent'/> React.js</> },
   { content: <><RiNextjsFill className='accent'/> Next.js</> },
   { content: <><SiTypescript className='accent'/> TypeScript</> },
-  { content: <><RiTailwindCssFill/> Tailwind CSS</> },
-  { content: <><FaNode/> Node.js</> },
-  { content: <><SiExpress /> Express.js</> },
-  { content: <><DiMongodb /> MongoDB </> },
-  { content: <><FaGithub/> Git & GitHub</> },
+  { content: <><RiTailwindCssFill className='accent'/> Tailwind CSS</> },
+  { content: <><FaNode className='accent'/> Node.js</> },
+  { content: <><SiExpress className='accent'/> Express.js</> },
+  { content: <><DiMongodb className='accent'/> MongoDB </> },
+  { content: <><FaGithub className='accent'/> Git & GitHub</> },
   { content: "Responsive Design" },
   { content: "RESTful APIs" },
   { content: "Problem Solving / Algorithms" },
+];
+
+const techLogos = [
+  { node: <SiReact />, title: "React", href: "https://react.dev" },
+  { node: <SiNextdotjs />, title: "Next.js", href: "https://nextjs.org" },
+  { node: <SiTypescript />, title: "TypeScript", href: "https://www.typescriptlang.org" },
+  { node: <SiTailwindcss />, title: "Tailwind CSS", href: "https://tailwindcss.com" },
+  { node: <FaNode />, title: "Node js", href: "https://nodejs.org/en" },
+  { node: <FaReact />, title: "React", href: "https://react.dev/" },
+  { node: <FaGithub />, title: "Github", href: "https://github.com/" },
+  { node: <DiMongodb />, title: "Github", href: "https://www.mongodb.com/" },
 ];
 
 function About() {
@@ -112,8 +124,8 @@ function About() {
         </div>
 
         {/* Skills / Infinite Scroll */}
-        <div className='flex flex-col flex-1 gap-4 overflow-auto'>
-          <Heading title="Skills" />
+        <div className='flex flex-col flex-1 gap-4 overflow-auto py-10'>
+          <Heading title="Skills"/>
           <div className='h-64 md:h-80 w-full'>
             <InfiniteScroll
               items={items}
@@ -128,6 +140,38 @@ function About() {
         </div>
 
         {/* Tech Interests */}
+        <div className='py-10 flex flex-col gap-10'>
+          <Heading title="Tech Interests"/>
+          <div className='h-1/2 relative overflow-hidden'>
+            <LogoLoop
+              logos={techLogos}
+              speed={100}
+              direction="left"
+              logoHeight={48}
+              gap={40}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#000000"
+              ariaLabel="Technology partners"
+              />
+          </div>
+          <div className='h-1/2 relative overflow-hidden'>
+            <LogoLoop
+              logos={techLogos}
+              speed={100}
+              direction="right"
+              logoHeight={48}
+              gap={40}
+              pauseOnHover
+              scaleOnHover
+              fadeOut
+              fadeOutColor="#000000"
+              ariaLabel="Technology partners"
+              />
+          </div>
+
+        </div>
 
 
       </div>
