@@ -12,7 +12,7 @@ function Contact() {
       exit={{ opacity: 0, y: 50 }}      // Fade out while moving down
       transition={{ duration: 1.8 }}
     >
-      <div className='h-full bg-black/50 w-5/6'>
+      <div className='h-full bg-black/50 w-5/6 rounded-lg'>
         {/* Your content here */}
 
         <div className=''>

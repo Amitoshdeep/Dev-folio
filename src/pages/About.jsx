@@ -13,7 +13,7 @@ function About() {
       exit={{ opacity: 0, y: 50 }}      // Fade out while moving down
       transition={{ duration: 1.8 }}
     >
-      <div className='h-full bg-black/50 w-5/6 flex flex-col p-4'>
+      <div className='h-full bg-black/50 w-5/6 flex flex-col p-4 rounded-lg'>
         {/* Your content here */}
 
         <div className='h-max'>
