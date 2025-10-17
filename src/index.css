@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@theme{
+
+  --font-merriWeather : "Merriweather", serif;
+  --font-openSans :"Open Sans", sans-serif;
+  --font-playFair :"Playfair", serif;
+  --font-lato : "Lato", sans-serif;
+}
+
+/* FOR COLOR SCHEMES :3 */
+/* global.css */
+:root {
+  --accent-color: #f87171; /* default red */
+}
+
+/* Example usage */
+.accent {
+  color: var(--accent-color);
+}
+
+.accent-bg {
+  background-color: var(--accent-color);
+  /* color: white; */
+}
+
