@@ -11,6 +11,7 @@ import Contact from './pages/Contact'
 import ClickSpark from './reactBitz/ClickSpark'
 import Navbar from './components/Navbar'
 import NotFound from './pages/NotFound'
+import ScrollToTop from './components/ScrollToTop'
 
 // For Color Toggle
 const colors = ['#f87171', '#fb923c', '#f472b6', '#34d399', '#60a5fa']
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <div
+    data-scroll-container
     className='h-screen w-screen
     bg-[url(/imgs/bgMe.webp)] bg-right-top
     overflow-x-hidden
@@ -46,7 +48,7 @@ function App() {
       >
 
         <Navbar/>
-
+        <ScrollToTop/>
         <Routes>
 
           <Route path='/' element={<Home/> } />
